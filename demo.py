@@ -1,4 +1,30 @@
-import tkinter
+from tkinter import *
+
+class GUI:
+    
+    def __init__(self) -> None:
+
+        self.raiz=Tk()
+        self.raiz.resizable(False, False)
+        self.raiz.title("Domicilios Uninorte")
+        self.raiz.iconbitmap("domicilios_uninorte.ico")
+        self.frame1= Frame(self.raiz, width=300, height=500)
+        self.frame1.pack()
+
+        cuadroUsuario=Entry(self.frame1)
+        cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
+        usuarioLabel=Label(self.frame1, text="Usuario: ")
+        usuarioLabel.grid(row=1, column=0, padx=10, pady=10, sticky="e")
+
+        cuadroContrasena=Entry(self.frame1)
+        cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
+        cuadroContrasena.config(show="*")
+        contrasenaLabel=Label(self.frame1, text="Contraseña: ")
+        contrasenaLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
+
+        botonConfirmar= Button(self.frame1, text="Confirmar")
+        botonConfirmar.grid(row=3, column=1, padx=10, pady=10)
+
 class Pedidos_compra:
     def __init__(self, restaurante) -> None:
         self.dinero = 0
@@ -57,3 +83,5 @@ class Usuarios:
             else:
                 print("\fLos datos son incorrectos, por favor intentelo de nuevo.")
                 self.usuario_contrasena()
+
+
