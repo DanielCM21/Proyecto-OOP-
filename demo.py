@@ -1,3 +1,4 @@
+import tkinter
 class Pedidos_compra:
     def __init__(self, restaurante) -> None:
         self.dinero = 0

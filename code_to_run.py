@@ -1,5 +1,24 @@
 from demo import *
+from tkinter import *
 
+
+raiz=Tk()
+raiz.resizable(False, False)
+raiz.title("Domicilios Uninorte")
+raiz.iconbitmap("domicilios_uninorte.ico")
+frame1= Frame(raiz, width=300, height=500)
+frame1.pack()
+
+cuadroUsuario=Entry(frame1)
+cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
+usuarioLabel=Label(frame1, text="Usuario: ")
+usuarioLabel.grid(row=1, column=0, padx=10, pady=10)
+
+cuadroContrasena=Entry(frame1)
+cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
+cuadroContrasena.config(show="*")
+contrasenaLabel=Label(frame1, text="Contraseña: ")
+contrasenaLabel.grid(row=2, column=0, padx=10, pady=10)
 
 productos_express = {"1": ["Dedito", 2900], "2": ["Perro caliente", 4500], "3": ["Salchipapa", 10000], "4": ["Mazorca desgranada", 11500]}
 productos_terrasse = {"1": ["Galleta", 3900], "2": ["Brownie", 3500], "3": ["Sandwich", 12500], "4": ["Cookie Pie", 18500]}
