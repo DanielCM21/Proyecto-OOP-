@@ -12,13 +12,19 @@ frame1.pack()
 cuadroUsuario=Entry(frame1)
 cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
 usuarioLabel=Label(frame1, text="Usuario: ")
-usuarioLabel.grid(row=1, column=0, padx=10, pady=10)
+usuarioLabel.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 
 cuadroContrasena=Entry(frame1)
 cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
 cuadroContrasena.config(show="*")
 contrasenaLabel=Label(frame1, text="Contraseña: ")
-contrasenaLabel.grid(row=2, column=0, padx=10, pady=10)
+contrasenaLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
+
+botonConfirmar= Button(frame1, text="Confirmar")
+botonConfirmar.grid(row=3, column=1, padx=10, pady=10)
+
+usuarios = Usuarios("imroman", "daniela123")
+
 
 productos_express = {"1": ["Dedito", 2900], "2": ["Perro caliente", 4500], "3": ["Salchipapa", 10000], "4": ["Mazorca desgranada", 11500]}
 productos_terrasse = {"1": ["Galleta", 3900], "2": ["Brownie", 3500], "3": ["Sandwich", 12500], "4": ["Cookie Pie", 18500]}
@@ -29,7 +35,7 @@ alquiler_producto = {"1": ["Computador", 2000], "2": ["Guitarra", 1500], "3": ["
 #edificios = {"A": ["Bloque a", 3000],"B" :["Bloque b", 2500], "C" :["Bloque c", 2000], "D": ["Bloque d", 3000],"E" :["Bloque e", 2500], "F" :["Bloque f", 2000], "G" :["Bloque g", 2500], "I" :["Bloque i", 2000], "K" :["Bloque k", 2500], "J" :["Bloque J", 4000] }
 
 
-usuarios = Usuarios("imroman", "daniela123")
+
 
 
 print("\fEn Domicilios Uninorte puedes: \f\f"

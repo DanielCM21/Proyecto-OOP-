@@ -44,9 +44,9 @@ class Pedidos_alquiler:
         print("Muchas gracias por su compra, su articulo llegará pronto.")
 
 class Usuarios:
-    def __init__(self, nombre, contrasena) -> None:
-        self.nombre = nombre
-        self.contrasena = contrasena
+    def __init__(self, cuadroUsuario, cuadroContrasena) -> None:
+        self.nombre = cuadroUsuario
+        self.contrasena = cuadroContrasena
         self.usuario_contrasena()
 
     def usuario_contrasena(self):
