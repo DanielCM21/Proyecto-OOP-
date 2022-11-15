@@ -1,4 +1,4 @@
-from demo import *
+from proyecto import *
 from tkinter import *
 
 productos_express = {"1": ["Dedito", 2900], "2": ["Perro caliente", 4500], "3": ["Salchipapa", 10000], "4": ["Mazorca desgranada", 11500]}
@@ -9,7 +9,7 @@ alquiler_producto = {"1": ["Computador", 2000], "2": ["Guitarra", 1500], "3": ["
 
 #edificios = {"A": ["Bloque a", 3000],"B" :["Bloque b", 2500], "C" :["Bloque c", 2000], "D": ["Bloque d", 3000],"E" :["Bloque e", 2500], "F" :["Bloque f", 2000], "G" :["Bloque g", 2500], "I" :["Bloque i", 2000], "K" :["Bloque k", 2500], "J" :["Bloque J", 4000] }
 
-GUI()
+GUI_Usuario()
 
 usuarios = Usuarios("imroman", "daniela123")
 

@@ -1,9 +1,9 @@
 from tkinter import *
 
-class GUI:
+class GUI_Usuario:
     
     def __init__(self) -> None:
-
+        self.ventanaDeCompra = ventanadecompra()
         self.raiz=Tk()
         self.raiz.resizable(False, False)
         self.raiz.title("Domicilios Uninorte")
@@ -11,14 +11,14 @@ class GUI:
         self.frame1= Frame(self.raiz, width=300, height=500)
         self.frame1.pack()
 
-        cuadroUsuario=Entry(self.frame1)
-        cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
+        self.cuadroUsuario=Entry(self.frame1)
+        self.cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
         usuarioLabel=Label(self.frame1, text="Usuario: ")
         usuarioLabel.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 
-        cuadroContrasena=Entry(self.frame1)
-        cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
-        cuadroContrasena.config(show="*")
+        self.cuadroContrasena=Entry(self.frame1)
+        self.cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
+        self.cuadroContrasena.config(show="*")
         contrasenaLabel=Label(self.frame1, text="Contraseña: ")
         contrasenaLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
 
@@ -84,4 +84,11 @@ class Usuarios:
                 print("\fLos datos son incorrectos, por favor intentelo de nuevo.")
                 self.usuario_contrasena()
 
-
+class ventanadecompra:
+    def __init__(self) -> None:
+        pass
+    def crearventana(self):
+        self.raiz=Tk()
+        self.raiz.resizable(False, False)
+        self.raiz.title("Domicilios Uninorte")
+        self.raiz.iconbitmap("domicilios_uninorte.ico")
