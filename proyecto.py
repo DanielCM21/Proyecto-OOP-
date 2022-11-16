@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 
+
 class MenuPrincipal:
     def __init__(self) -> None:
         self.ventana=Tk()
@@ -9,6 +10,21 @@ class MenuPrincipal:
         self.frameven=Frame(self.ventana, width=300, height=500)
         self.frameven.pack()
         self.ventana.resizable(False,False)
+        
+        lista = [
+            "opcion 1",
+            "opcion 2",
+            "opcion 3",
+            "opcion 4"
+        ]
+
+        valor = StringVar()
+        valor.set(lista[0])
+
+        drop = OptionMenu(self.ventana, valor, *lista)
+        drop.pack()
+
+        self.ventana.mainloop()
 
 class GUI_Usuario:
     
@@ -20,6 +36,7 @@ class GUI_Usuario:
         self.raiz.iconbitmap("domicilios_uninorte.ico")
         self.frame1= Frame(self.raiz)
         self.frame1.pack()
+    
 
         usuario=StringVar()
         self.cuadroUsuario=Entry(self.frame1, textvariable=usuario)
@@ -96,21 +113,3 @@ class Pedidos_alquiler:
         print("")
         print("El cambio es de: " + str(self.dinero))
         print("Muchas gracias por su compra, su articulo llegará pronto.")
-
-
-class Usuarios:
-    def __init__(self, Usuario, Contrasena) -> None:
-        self.nombre = Usuario
-        self.contrasena = Contrasena
-        self.usuario_contrasena()
-
-    def usuario_contrasena(self):
-            usuario = input("\fIngrese su usuario: ")
-            contra = input("\fIngrese su contrasena: ")
-            if self.nombre == usuario and self.contrasena == contra:
-                print("\fLos datos ingresados son correctos, Bienvenido a la app!")
-            else:
-                print("\fLos datos son incorrectos, por favor intentelo de nuevo.")
-                self.usuario_contrasena()
-
-
