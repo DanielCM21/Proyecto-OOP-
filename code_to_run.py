@@ -11,7 +11,7 @@ alquiler_producto = {"1": ["Computador", 2000], "2": ["Guitarra", 1500], "3": ["
 
 GUI_Usuario()
 
-usuarios = Usuarios("imroman", "daniela123")
+
 
 print("\fEn Domicilios Uninorte puedes: \f\f"
             "1. Compra en establecimientos DuNord\f"

@@ -1,29 +1,43 @@
 from tkinter import *
+from tkinter import messagebox
+
 
 class GUI_Usuario:
     
     def __init__(self) -> None:
-        self.ventanaDeCompra = ventanadecompra()
         self.raiz=Tk()
         self.raiz.resizable(False, False)
         self.raiz.title("Domicilios Uninorte")
         self.raiz.iconbitmap("domicilios_uninorte.ico")
         self.frame1= Frame(self.raiz, width=300, height=500)
         self.frame1.pack()
+        
 
-        self.cuadroUsuario=Entry(self.frame1)
+        usuario=StringVar()
+        self.cuadroUsuario=Entry(self.frame1, textvariable=usuario)
         self.cuadroUsuario.grid(row=1, column=1, padx=10, pady=10)
         usuarioLabel=Label(self.frame1, text="Usuario: ")
         usuarioLabel.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 
-        self.cuadroContrasena=Entry(self.frame1)
+        contra=StringVar()
+        self.cuadroContrasena=Entry(self.frame1, textvariable=contra)
         self.cuadroContrasena.grid(row=2, column=1, padx=10, pady=10)
-        self.cuadroContrasena.config(show="*")
+        self.cuadroContrasena.config(show="•")
         contrasenaLabel=Label(self.frame1, text="Contraseña: ")
         contrasenaLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
 
-        botonConfirmar= Button(self.frame1, text="Confirmar")
+        def ingresar():
+            if usuario.get()=="proyecto" and contra.get()=="hola123" :
+                self.raiz.destroy()
+                self.raiz = Tk()
+            else:
+                messagebox.showerror(message="Incorrecto, por favor intente de nuevo.", title="Incorrecto")
+
+
+        botonConfirmar= Button(self.frame1, text="Confirmar", command=ingresar)
         botonConfirmar.grid(row=3, column=1, padx=10, pady=10)
+
+        self.raiz.mainloop()
 
 class Pedidos_compra:
     def __init__(self, restaurante) -> None:
@@ -69,10 +83,11 @@ class Pedidos_alquiler:
         print("El cambio es de: " + str(self.dinero))
         print("Muchas gracias por su compra, su articulo llegará pronto.")
 
+
 class Usuarios:
-    def __init__(self, cuadroUsuario, cuadroContrasena) -> None:
-        self.nombre = cuadroUsuario
-        self.contrasena = cuadroContrasena
+    def __init__(self, Usuario, Contrasena) -> None:
+        self.nombre = Usuario
+        self.contrasena = Contrasena
         self.usuario_contrasena()
 
     def usuario_contrasena(self):
@@ -84,11 +99,4 @@ class Usuarios:
                 print("\fLos datos son incorrectos, por favor intentelo de nuevo.")
                 self.usuario_contrasena()
 
-class ventanadecompra:
-    def __init__(self) -> None:
-        pass
-    def crearventana(self):
-        self.raiz=Tk()
-        self.raiz.resizable(False, False)
-        self.raiz.title("Domicilios Uninorte")
-        self.raiz.iconbitmap("domicilios_uninorte.ico")
+
