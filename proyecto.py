@@ -60,7 +60,8 @@ class AlquilerProducto:
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
 
         def alquiler():
-            pass
+            self.ventana_a.destroy()
+            messagebox.showinfo(message="Su pedido fue realizado correctamente, pronto estará en camino.", title="Correcto")
 
         botonConfirm1= Button(self.frameven, text="Alquilar", command=alquiler)
         botonConfirm1.grid(row=4, column=1, padx=10, pady=10)
@@ -142,7 +143,8 @@ class CompraProducto:
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
 
         def comprar():
-            pass
+            self.ventana_b.destroy()
+            messagebox.showinfo(message="Su pedido fue realizado correctamente, pronto estará en camino.", title="Correcto")
 
         botonConfirm2= Button(self.frameven, text="Comprar", command=comprar)
         botonConfirm2.grid(row=6, column=3, padx=10, pady=10)
