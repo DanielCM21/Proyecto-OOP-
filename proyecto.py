@@ -1,3 +1,4 @@
+from PIL import ImageTk, Image
 from tkinter import *
 from tkinter import messagebox
 
@@ -7,9 +8,15 @@ class MenuPrincipal:
         self.ventana=Tk()
         self.ventana.title("Domicilios Uninorte")
         self.ventana.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana, width=300, height=500)
+        self.frameven=Frame(self.ventana, width=500, height=700)
         self.frameven.pack()
         self.ventana.resizable(False,False)
+
+        self.imagendomi = Image.open(file="domicilios_uninorte.png")
+        self.imagendomi= self.imagendomi.resize((200,200), Image.ANTIALIAS)
+        imagend = ImageTk.PhotoImage(self.imagendomi)
+        lbl_imagen = Label(self.frameven, image=imagend)
+        lbl_imagen.pack()
         
         lista = [
             "opcion 1",

@@ -1,6 +1,6 @@
 from proyecto import *
 from tkinter import *
-from tkinter import messagebox
+
 
 productos_express = {"1": ["Dedito", 2900], "2": ["Perro caliente", 4500], "3": ["Salchipapa", 10000], "4": ["Mazorca desgranada", 11500]}
 productos_terrasse = {"1": ["Galleta", 3900], "2": ["Brownie", 3500], "3": ["Sandwich", 12500], "4": ["Cookie Pie", 18500]}
