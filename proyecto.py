@@ -56,7 +56,7 @@ class AlquilerProducto:
         titulo =Label(self.frameven, text="¡DOMICILIOS UNINORTE!", font=("Times New Roman",15))
         titulo.grid(row=0, column=0, padx=10, pady=10)
 
-        subtitulo =Label(self.frameven, text="Para articulos de alquiler se\nencuentran disponibles:", font=("Times New Roman",12))
+        subtitulo =Label(self.frameven, text="Para articulos de alquiler se\nencuentran disponibles:", font=("Times New Roman", 12))
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
 
         computador=IntVar()
@@ -111,62 +111,47 @@ class CompraProducto:
         titulo =Label(self.frameven, text="¡DOMICILIOS UNINORTE!", font=("Times New Roman",15))
         titulo.grid(row=0, column=1, padx=10, pady=10)
 
-        subtitulo =Label(self.frameven, text="Los establecimientos que se\nencuentran disponibles son:", font=("Times New Roman",12))
+        subtitulo =Label(self.frameven, text="Los establecimientos que se\nencuentran disponibles con\n sus distintos productos son:", font=("Times New Roman",12))
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
 
-        def express():
-            self.ventana_b.destroy()
-            Express()
+        dedito=IntVar()
+        perro=IntVar()
+        salchipapa=IntVar()
+        mazorca=IntVar()
 
-        expressLabel=Label(self.frameven, text="DuNord Express: ")
+        def opcionesalquiler():
+            opcionesElegida=""
+
+            if (dedito.get()==1):
+                opcionesElegida+="Dedito "
+            if (perro.get()==1):
+                opcionesElegida+="Perro Caliente "
+            if (salchipapa.get()==1):
+                opcionesElegida+="Salchipapa "
+            if (mazorca.get()==1):
+                opcionesElegida+="Mazorca Desgranada "
+            
+            textoMostrado.config(text="Los articulos elegidos son:\n" + opcionesElegida)   
+
+        expressLabel=Label(self.frameven, text="DuNord Express: ", font=("Times New Roman", 10))
         expressLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
-        botonIngreso1= Button(self.frameven, text="Ingresar", command=express)
-        botonIngreso1.grid(row=2, column=1, padx=10, pady=10)
+
+        Checkbutton(self.frameven, text="Dedito", variable= dedito, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Perro Caliente", variable= perro, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Salchipapa", variable= salchipapa, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Mazorca Desgranada", variable= mazorca, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
+        
+        textoMostrado=Label(self.frameven)
+        textoMostrado.grid(row=7, column=0)
 
         def regresar():
             self.ventana_b.destroy()
             MenuPrincipal()
 
         botonRegresar2= Button(self.frameven, text="Regresar", command=regresar)
-        botonRegresar2.grid(row=3, column=2, padx=10, pady=10)
+        botonRegresar2.grid(row=12, column=3, padx=10, pady=10)
 
         self.ventana_b.mainloop()
-
-class Express:
-    def _init_(self) -> None:
-        self.ventana_express=Tk()
-        self.ventana_express.title("Domicilios Uninorte")
-        self.ventana_express.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana_express)
-        self.frameven.pack()
-        self.ventana_express.resizable(False,False)
-
-class Terrasse:
-    def _init_(self) -> None:
-        self.ventana_terrasse=Tk()
-        self.ventana_terrasse.title("Domicilios Uninorte")
-        self.ventana_terrasse.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana_terrasse)
-        self.frameven.pack()
-        self.ventana_terrasse.resizable(False,False)
-
-class Cafe:
-    def _init_(self) -> None:
-        self.ventana_cafe=Tk()
-        self.ventana_cafe.title("Domicilios Uninorte")
-        self.ventana_cafe.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana_cafe)
-        self.frameven.pack()
-        self.ventana_cafe.resizable(False,False)
-
-class Store:
-    def _init_(self) -> None:
-        self.ventana_store=Tk()
-        self.ventana_store.title("Domicilios Uninorte")
-        self.ventana_store.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana_store)
-        self.frameven.pack()
-        self.ventana_store.resizable(False,False)
 
 class GUI_Usuario:
     
