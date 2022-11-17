@@ -86,15 +86,36 @@ class AlquilerProducto:
                 opcionesElegida+="Raqueta de Tenis "
             
             textoMostrado.config(text="Los articulos elegidos son:\n" + opcionesElegida)   
+        
+        def precio():
+            precio_final=0
 
-        Checkbutton(self.frameven, text="Computador", variable= computador, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 2, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Guitarra", variable= guitarra, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Marcadores", variable= marcadores, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Calculadora", variable= calculadora, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Raqueta de Tenis", variable= raquetadetenis, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
+            if (computador.get()==1):
+                precio_final+=2000
+            if (guitarra.get()==1):
+                precio_final+=1500
+            if (marcadores.get()==1):
+                precio_final+=500
+            if (calculadora.get()==1):
+                precio_final+=1000
+            if (raquetadetenis.get()==1):
+                precio_final+=1200
+
+            textoMostradoprecio.config(text="El precio a pagar es: " + str(precio_final))
+
+        Checkbutton(self.frameven, text="Computador", variable= computador, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 2, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Guitarra", variable= guitarra, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Marcadores", variable= marcadores, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Calculadora", variable= calculadora, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Raqueta de Tenis", variable= raquetadetenis, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
 
         textoMostrado=Label(self.frameven)
         textoMostrado.grid(row=7, column=0)
+
+        textoMostradoprecio=Label(self.frameven)
+        textoMostradoprecio.grid(row=4, column=2)
+
+        
 
         def regresar():
             self.ventana_a.destroy()
@@ -262,7 +283,6 @@ class GUI_Usuario:
         def ingresar():
             if usuario.get()=="usuario1" and contra.get()=="contra1" :
                 self.raiz.destroy()
-                MenuPrincipal()
             else:
                 messagebox.showerror(message="Incorrecto, por favor intente de nuevo.", title="Incorrecto")
                 messagebox.showinfo(message="El usuario es: usuario1 - La contraseña es: contra1", title="Información importante")

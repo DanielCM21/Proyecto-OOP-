@@ -8,9 +8,8 @@ productos_cafe = {"1": ["Pasta Alfredo de Pollo", 16500], "2": ["Brownie", 3500]
 productos_store = {"1": ["Papita de limon", 6300], "2": ["Choclito", 7700], "3": ["Takis fuego", 3000], "4": ["Detodito picante", 7000], "5": ["Gomitas Oro", 2900], "6": ["Chicharones BBQ/Limon/Naturales", 4500], "7": ["Chocolates jumbo", 3000], "8": ["Brownie", 3500]}
 alquiler_producto = {"1": ["Computador", 2000], "2": ["Guitarra", 1500], "3": ["Marcadores", 500], "4": ["Calculadora", 1000], "5":["Raqueta de tenis", 1200]}
 
-#edificios = {"A": ["Bloque a", 3000],"B" :["Bloque b", 2500], "C" :["Bloque c", 2000], "D": ["Bloque d", 3000],"E" :["Bloque e", 2500], "F" :["Bloque f", 2000], "G" :["Bloque g", 2500], "I" :["Bloque i", 2000], "K" :["Bloque k", 2500], "J" :["Bloque J", 4000] }
-
 GUI_Usuario()
+MenuPrincipal()
 
 print("\fEn Domicilios Uninorte puedes: \f\f"
             "1. Compra en establecimientos DuNord\f"
