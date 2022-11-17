@@ -114,7 +114,7 @@ class AlquilerProducto:
         textoMostrado.grid(row=7, column=0)
 
         textoMostradoprecio=Label(self.frameven)
-        textoMostradoprecio.grid(row=4, column=2)
+        textoMostradoprecio.grid(row=5, column=1)
 
         
 
