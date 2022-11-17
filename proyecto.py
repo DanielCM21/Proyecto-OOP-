@@ -14,8 +14,15 @@ class MenuPrincipal:
         titulo =Label(self.frameven, text="¡DOMICILIOS UNINORTE!", font=("Times New Roman",15))
         titulo.grid(row=0, column=1, padx=10, pady=10)
         
-        titulo =Label(self.frameven, text="En Domicilios Uninorte puedes:", font=("Times New Roman",12))
-        titulo.grid(row=1, column=0, padx=10, pady=10)
+        subtitulo =Label(self.frameven, text="En Domicilios Uninorte puedes:", font=("Times New Roman",12))
+        subtitulo.grid(row=1, column=0, padx=10, pady=10)
+
+        def salir():
+            self.ventana.destroy()
+            messagebox.showinfo(message="Gracias por utilizar nuestra App, hasta luego.", title="Hasta Luego")
+
+        botonsalir= Button(self.frameven, text="Salir", command=salir)
+        botonsalir.grid(row=4, column=2, padx=10, pady=10)
 
         def alquiler():
             self.ventana.destroy()
@@ -46,12 +53,49 @@ class AlquilerProducto:
         self.frameven.pack()
         self.ventana_a.resizable(False,False)
 
+        titulo =Label(self.frameven, text="¡DOMICILIOS UNINORTE!", font=("Times New Roman",15))
+        titulo.grid(row=0, column=0, padx=10, pady=10)
+
+        subtitulo =Label(self.frameven, text="Para articulos de alquiler se\nencuentran disponibles:", font=("Times New Roman",12))
+        subtitulo.grid(row=1, column=0, padx=10, pady=10)
+
+        computador=IntVar()
+        guitarra=IntVar()
+        marcadores=IntVar()
+        calculadora=IntVar()
+        raquetadetenis=IntVar()
+
+        def opcionesalquiler():
+            opcionesElegida=""
+
+            if (computador.get()==1):
+                opcionesElegida+="Computador "
+            if (guitarra.get()==1):
+                opcionesElegida+="Guitarra "
+            if (marcadores.get()==1):
+                opcionesElegida+="Marcadores "
+            if (calculadora.get()==1):
+                opcionesElegida+="Calculadora "
+            if (raquetadetenis.get()==1):
+                opcionesElegida+="Raqueta de Tenis "
+            
+            textoMostrado.config(text="Los articulos elegidos son:\n" + opcionesElegida)   
+
+        Checkbutton(self.frameven, text="Computador", variable= computador, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 2, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Guitarra", variable= guitarra, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Marcadores", variable= marcadores, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Calculadora", variable= calculadora, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Raqueta de Tenis", variable= raquetadetenis, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
+
+        textoMostrado=Label(self.frameven)
+        textoMostrado.grid(row=7, column=0)
+
         def regresar():
             self.ventana_a.destroy()
             MenuPrincipal()
 
         botonRegresar1= Button(self.frameven, text="Regresar", command=regresar)
-        botonRegresar1.grid(row=2, column=1, padx=10, pady=10)
+        botonRegresar1.grid(row=7, column=1, padx=10, pady=10)
 
         self.ventana_a.mainloop()
 
@@ -64,6 +108,7 @@ class CompraProducto:
         self.frameven.pack()
         self.ventana_b.resizable(False,False)
 
+
         def regresar():
             self.ventana_b.destroy()
             MenuPrincipal()
@@ -72,7 +117,7 @@ class CompraProducto:
         botonRegresar2.grid(row=2, column=1, padx=10, pady=10)
 
         self.ventana_b.mainloop()
-        
+
 class GUI_Usuario:
     
     def __init__(self) -> None:
