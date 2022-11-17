@@ -1,4 +1,3 @@
-from PIL import ImageTk, Image
 from tkinter import *
 from tkinter import messagebox
 
@@ -8,31 +7,72 @@ class MenuPrincipal:
         self.ventana=Tk()
         self.ventana.title("Domicilios Uninorte")
         self.ventana.iconbitmap("domicilios_uninorte.ico")
-        self.frameven=Frame(self.ventana, width=500, height=700)
+        self.frameven=Frame(self.ventana)
         self.frameven.pack()
         self.ventana.resizable(False,False)
 
-        self.imagendomi = Image.open(file="domicilios_uninorte.png")
-        self.imagendomi= self.imagendomi.resize((200,200), Image.ANTIALIAS)
-        imagend = ImageTk.PhotoImage(self.imagendomi)
-        lbl_imagen = Label(self.frameven, image=imagend)
-        lbl_imagen.pack()
+        titulo =Label(self.frameven, text="¡DOMICILIOS UNINORTE!", font=("Times New Roman",15))
+        titulo.grid(row=0, column=1, padx=10, pady=10)
         
-        lista = [
-            "opcion 1",
-            "opcion 2",
-            "opcion 3",
-            "opcion 4"
-        ]
+        titulo =Label(self.frameven, text="En Domicilios Uninorte puedes:", font=("Times New Roman",12))
+        titulo.grid(row=1, column=0, padx=10, pady=10)
 
-        valor = StringVar()
-        valor.set(lista[0])
+        def alquiler():
+            self.ventana.destroy()
+            AlquilerProducto()
 
-        drop = OptionMenu(self.ventana, valor, *lista)
-        drop.pack()
+        alquilerLabel=Label(self.frameven, text="Alquiler de articulos: ")
+        alquilerLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
+        botonConfirmar2= Button(self.frameven, text="Alquilar", command=alquiler)
+        botonConfirmar2.grid(row=2, column=1, padx=10, pady=10)
+
+        def comprar():
+            self.ventana.destroy()
+            CompraProducto()
+
+        alquilerLabel=Label(self.frameven, text="Compra en establecimiento Dunord: ")
+        alquilerLabel.grid(row=3, column=0, padx=10, pady=10, sticky="e")
+        botonConfirmar2= Button(self.frameven, text="Comprar", command=comprar)
+        botonConfirmar2.grid(row=3, column=1, padx=10, pady=10)
 
         self.ventana.mainloop()
 
+class AlquilerProducto:
+    def __init__(self) -> None:
+        self.ventana_a=Tk()
+        self.ventana_a.title("Domicilios Uninorte")
+        self.ventana_a.iconbitmap("domicilios_uninorte.ico")
+        self.frameven=Frame(self.ventana_a)
+        self.frameven.pack()
+        self.ventana_a.resizable(False,False)
+
+        def regresar():
+            self.ventana_a.destroy()
+            MenuPrincipal()
+
+        botonRegresar1= Button(self.frameven, text="Regresar", command=regresar)
+        botonRegresar1.grid(row=2, column=1, padx=10, pady=10)
+
+        self.ventana_a.mainloop()
+
+class CompraProducto:
+    def __init__(self) -> None:
+        self.ventana_b=Tk()
+        self.ventana_b.title("Domicilios Uninorte")
+        self.ventana_b.iconbitmap("domicilios_uninorte.ico")
+        self.frameven=Frame(self.ventana_b)
+        self.frameven.pack()
+        self.ventana_b.resizable(False,False)
+
+        def regresar():
+            self.ventana_b.destroy()
+            MenuPrincipal()
+
+        botonRegresar2= Button(self.frameven, text="Regresar", command=regresar)
+        botonRegresar2.grid(row=2, column=1, padx=10, pady=10)
+
+        self.ventana_b.mainloop()
+        
 class GUI_Usuario:
     
     def __init__(self) -> None:
@@ -44,6 +84,8 @@ class GUI_Usuario:
         self.frame1= Frame(self.raiz)
         self.frame1.pack()
     
+        titulo =Label(self.frame1, text="¡DOMICILIOS UNINORTE! \n Login:", font=("Times New Roman",15))
+        titulo.grid(row=0, column=1, padx=10, pady=10)
 
         usuario=StringVar()
         self.cuadroUsuario=Entry(self.frame1, textvariable=usuario)
