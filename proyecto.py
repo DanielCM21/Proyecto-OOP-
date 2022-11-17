@@ -59,6 +59,12 @@ class AlquilerProducto:
         subtitulo =Label(self.frameven, text="Para articulos de alquiler se\nencuentran disponibles:", font=("Times New Roman", 12))
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
 
+        def alquiler():
+            pass
+
+        botonConfirm1= Button(self.frameven, text="Alquilar", command=alquiler)
+        botonConfirm1.grid(row=4, column=1, padx=10, pady=10)
+
         computador=IntVar()
         guitarra=IntVar()
         marcadores=IntVar()
@@ -113,6 +119,12 @@ class CompraProducto:
 
         subtitulo =Label(self.frameven, text="Los establecimientos que se\nencuentran disponibles con\n sus distintos productos son:", font=("Times New Roman",12))
         subtitulo.grid(row=1, column=0, padx=10, pady=10)
+
+        def comprar():
+            pass
+
+        botonConfirm2= Button(self.frameven, text="Comprar", command=comprar)
+        botonConfirm2.grid(row=6, column=3, padx=10, pady=10)
 
         dedito=IntVar()
         perro=IntVar()
@@ -172,7 +184,7 @@ class CompraProducto:
                 opcionesElegida+="Detodito BBQ "
             if (gomitas.get()==1):
                 opcionesElegida+="Gomitas ORO"
- 
+
             textoMostrado.config(text="Los articulos elegidos son:\n" + opcionesElegida)   
 
         expressLabel=Label(self.frameven, text="DuNord Express: ", font=("Times New Roman", 10))
