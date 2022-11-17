@@ -208,41 +208,85 @@ class CompraProducto:
 
             textoMostrado.config(text="Los articulos elegidos son:\n" + opcionesElegida)   
 
+        def precio():
+            precio_final=0
+
+            if (dedito.get()==1):
+                precio_final+=2900
+            if (perro.get()==1):
+                precio_final+=4500
+            if (salchipapa.get()==1):
+                precio_final+=10000
+            if (mazorca.get()==1):
+                precio_final+=11500
+
+            if (galleta.get()==1):
+                precio_final+=3900
+            if (brownie.get()==1):
+                precio_final+=3500
+            if (sandwich.get()==1):
+                precio_final+=12500
+            if (cockiepie.get()==1):
+                precio_final+=18500
+
+            if (pastas.get()==1):
+                precio_final+=16500
+            if (paletas.get()==1):
+                precio_final+=7900
+            if (colombinas.get()==1):
+                precio_final+=16900
+            if (nuggets.get()==1):
+                precio_final+=17900
+
+            if (choclitos.get()==1):
+                precio_final+=7700
+            if (takis.get()==1):
+                precio_final+=3200
+            if (detodito.get()==1):
+                precio_final+=7000
+            if (gomitas.get()==1):
+                precio_final+=2900
+
+            textoMostradoprecio.config(text="El precio a pagar es:\n" + str(precio_final))
+
         expressLabel=Label(self.frameven, text="DuNord Express: ", font=("Times New Roman", 10))
         expressLabel.grid(row=2, column=0, padx=10, pady=10, sticky="e")
 
-        Checkbutton(self.frameven, text="Dedito", variable= dedito, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Perro Caliente", variable= perro, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Salchipapa", variable= salchipapa, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Mazorca Desgranada", variable= mazorca, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Dedito", variable= dedito, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 3, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Perro Caliente", variable= perro, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 4, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Salchipapa", variable= salchipapa, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 5, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Mazorca Desgranada", variable= mazorca, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 6, column=0, padx=10, pady=10, sticky="e")
         
         terrasseLabel=Label(self.frameven, text="DuNord Terrasse: ", font=("Times New Roman", 10))
         terrasseLabel.grid(row=7, column=0, padx=10, pady=10, sticky="e")
 
-        Checkbutton(self.frameven, text="Galleta", variable= galleta, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 8, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Brownie", variable= brownie, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 9, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Sandwich", variable= sandwich, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 10, column=0, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Cockie Pie", variable= cockiepie, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 11, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Galleta", variable= galleta, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 8, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Brownie", variable= brownie, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 9, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Sandwich", variable= sandwich, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 10, column=0, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Cockie Pie", variable= cockiepie, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 11, column=0, padx=10, pady=10, sticky="e")
 
         cafeLabel=Label(self.frameven, text="DuNord Cafe: ", font=("Times New Roman", 10))
         cafeLabel.grid(row=2, column=2, padx=10, pady=10, sticky="e")
 
-        Checkbutton(self.frameven, text="Pastas", variable= pastas, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 3, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Paletas", variable= paletas, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 4, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Colombinas de Pollo", variable= colombinas, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 5, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Nuggets de Pollo", variable= nuggets, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 6, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Pastas", variable= pastas, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 3, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Paletas", variable= paletas, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 4, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Colombinas de Pollo", variable= colombinas, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 5, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Nuggets de Pollo", variable= nuggets, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 6, column=2, padx=10, pady=10, sticky="e")
 
 
         storeLabel=Label(self.frameven, text="DuNord Store: ", font=("Times New Roman", 10))
         storeLabel.grid(row=7, column=2, padx=10, pady=10, sticky="e")
 
-        Checkbutton(self.frameven, text="Choclitos", variable= choclitos, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 8, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Takis Fuego", variable= takis, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 9, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Detodito BBQ", variable= detodito, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 10, column=2, padx=10, pady=10, sticky="e")
-        Checkbutton(self.frameven, text="Gomitas ORO", variable= gomitas, onvalue=1, offvalue=0, command=opcionesalquiler).grid(row= 11, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Choclitos", variable= choclitos, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 8, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Takis Fuego", variable= takis, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 9, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Detodito BBQ", variable= detodito, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 10, column=2, padx=10, pady=10, sticky="e")
+        Checkbutton(self.frameven, text="Gomitas ORO", variable= gomitas, onvalue=1, offvalue=0, command=opcionesalquiler and precio).grid(row= 11, column=2, padx=10, pady=10, sticky="e")
 
         textoMostrado=Label(self.frameven)
         textoMostrado.grid(row=12, column=0)
+
+        textoMostradoprecio=Label(self.frameven)
+        textoMostradoprecio.grid(row=7, column=3)
 
         def regresar():
             self.ventana_b.destroy()
